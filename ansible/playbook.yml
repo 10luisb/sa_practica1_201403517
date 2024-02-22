@@ -10,7 +10,7 @@
 
     - name: Copiar los archivos construidos a la carpeta de Nginx
       copy:
-        src: /sa_practica1_201403517/estatica/
+        src: /sa_practica1_201403517/estatica/index.html
         dest: /var/www/html/index.html
         owner: root
         group: root
