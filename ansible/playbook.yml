@@ -1,0 +1,25 @@
+---
+- name: Desplegar aplicación React
+  hosts: localhost
+  connection: local
+  become: true
+  tasks:
+    - name: Instalar Nginx localmente
+      package:
+        name: nginx
+        state: present
+
+    - name: Copiar los archivos construidos a la carpeta de Nginx
+      copy:
+        src: /sa_practica1_201403517/estatica/
+        dest: /var/www/html/index.html
+        owner: root
+        group: root
+        mode: '0644'
+        dir_mode: '0755'
+        recursive: yes
+
+    - name: Reiniciar Nginx
+      service:
+        name: nginx
+        state: restarted

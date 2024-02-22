@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SA</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+            background-color: #f3f3f3;
+        }
+        h1 {
+            font-size: 36px;
+            color: #333;
+        }
+        p {
+            font-size: 24px;
+            color: #666;
+        }
+        .footer {
+            position: fixed;
+            bottom: 20px;
+            width: 100%;
+            color: #999;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Luis Roberto Boror Yoc - Carnet: 201403517</h1>
+    <p id="datetime"></p>
+    <p class="footer">Creado por Luis Roberto Boror Yoc - Carnet: 201403517</p>
+
+    <script>
+        function mostrarFechaYHora() {
+            var ahora = new Date();
+            var fecha = ahora.toLocaleDateString();
+            var hora = ahora.toLocaleTimeString();
+            document.getElementById('datetime').innerHTML = 'Fecha: ' + fecha + '<br>Hora: ' + hora;
+        }
+
+        // Actualizar cada segundo
+        setInterval(mostrarFechaYHora, 1000);
+
+        // Mostrar la fecha y hora actual al cargar la página
+        mostrarFechaYHora();
+    </script>
+</body>
+</html>
